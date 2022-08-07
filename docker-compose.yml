@@ -1,0 +1,31 @@
+version: "3.9"
+
+x-db-params: &db-params
+  POSTGRES_DB: newDb
+  POSTGRES_USER: kostia
+  POSTGRES_PASSWORD: 7833453
+  POSTGRES_URL: db
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./md_test/db:/var/lib/postgresql/data
+    environment:
+      <<: *db-params
+
+  web:
+    build: .
+    command:
+        sh -c "python manage.py collectstatic --noinput &&
+               python manage.py migrate &&
+               python manage.py runserver 0.0.0.0:8000
+              "
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      <<: *db-params
+    depends_on:
+      - db

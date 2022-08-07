@@ -1,0 +1,1401 @@
+{
+	"info": {
+		"_postman_id": "bdf0b1a6-a9bb-4d87-97c0-5b19ef25c010",
+		"name": "Mobidev_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18663103"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "Registration",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"olegstars@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"password_repeat\": \"1234\",\r\n    \"first_name\": \"Oleg\",\r\n    \"last_name\": \"Rotsher\",\r\n    \"company\": {\r\n        \"name\": \"MyProject\",\r\n        \"address\": \"Lenina st.65\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/profile/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"profile",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin profile detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/profile/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"profile",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin profile (update)",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Oleg\",\r\n    \"last_name\": \"Zalisniy\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/profile/3/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"profile",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin destroy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/profile/3/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"profile",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Company",
+					"item": [
+						{
+							"name": "Company detail",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/company/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"company",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Company update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"MyProject\",\r\n    \"address\": \"Lenina st.65\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/company/3/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"company",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Employee",
+					"item": [
+						{
+							"name": "Employee create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"maksimkuts@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"password_repeat\": \"1234\",\r\n    \"first_name\": \"Maksim\",\r\n    \"last_name\": \"Kutcenko\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/employee/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"employee",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Employee list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/employee/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"employee",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Employee list (fitltration all params)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/employee?first_name=Kiril&last_name=Filipov&email=test@test.com",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"employee"
+									],
+									"query": [
+										{
+											"key": "first_name",
+											"value": "Kiril"
+										},
+										{
+											"key": "last_name",
+											"value": "Filipov"
+										},
+										{
+											"key": "email",
+											"value": "test@test.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Employee list (fitltration 1 param)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/employee?first_name=Kiril&last_name=Filipov&email=test@test.com",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"employee"
+									],
+									"query": [
+										{
+											"key": "first_name",
+											"value": "Kiril"
+										},
+										{
+											"key": "last_name",
+											"value": "Filipov"
+										},
+										{
+											"key": "email",
+											"value": "test@test.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Employee detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/employee/5/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"employee",
+										"5",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add vehicles for user",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n    {\r\n        \"vehicles\": [30]\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/employee/add-vehicle/19/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"employee",
+										"add-vehicle",
+										"19",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove user vehicle",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n    {\r\n        \"vehicles\": [25]\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/employee/remove-vehicle/20/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"employee",
+										"remove-vehicle",
+										"20",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Employee update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"office\": 25\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/employee/13/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"employee",
+										"13",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set office for user",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"office\": 8\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/employee/27/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"employee",
+										"27",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Employee destroy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/employee/28/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"employee",
+										"28",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Office",
+					"item": [
+						{
+							"name": "Office create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"country\": \"USA\",\r\n    \"city\": \"New York\",\r\n    \"region\": \"California\",\r\n    \"name\": \"New office2\",\r\n    \"address\": \"54 st. Office 54\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/office/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"office",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Office list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/office/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"office",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Office list (filtration all params)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/office?county=USA&city=Chicago&region=California",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"office"
+									],
+									"query": [
+										{
+											"key": "county",
+											"value": "USA"
+										},
+										{
+											"key": "city",
+											"value": "Chicago"
+										},
+										{
+											"key": "region",
+											"value": "California"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Office list (filtration 1 param)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/office?county=usa",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"office"
+									],
+									"query": [
+										{
+											"key": "county",
+											"value": "usa"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Office detail",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/office/12/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"office",
+										"12",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Office update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"country\": \"USA\",\r\n    \"city\": \"New York\",\r\n    \"region\": \"California\",\r\n    \"name\": \"New office2\",\r\n    \"address\": \"54 st. Office 54\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/office/12/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"office",
+										"12",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Office destroy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/office/26/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"office",
+										"26",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vehicle",
+					"item": [
+						{
+							"name": "Vehicle create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n    {\r\n        \"name\": \"Car #4\",\r\n        \"model\": \"Mazda\",\r\n        \"year_of_manufactured\": 2012,\r\n        \"licence_plate\": \"FH237SE\",\r\n        \"office\": null\r\n    }\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/vehicle/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"vehicle",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vehicle list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/vehicle/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"vehicle",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vehicle list (filter)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/vehicle?office=1&driver=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"vehicle"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "1"
+										},
+										{
+											"key": "driver",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vehicle detail",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/vehicle/1/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"vehicle",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vehicle update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n    {\r\n        \"name\": \"Car #34534\",\r\n        \"model\": \"Mazda\",\r\n        \"year_of_manufactured\": 2012,\r\n        \"licence_plate\": \"FH237SE\",\r\n        \"office\": null\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/vehicle/10/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"vehicle",
+										"10",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vehicle set driver",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n    {\r\n        \"driver\": [5]\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/vehicle/set-driver/5/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"vehicle",
+										"set-driver",
+										"5",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vehicle remove driver",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/vehicle/remove-driver/5/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"vehicle",
+										"remove-driver",
+										"5",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vehicle destroy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/vehicle/10/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"vehicle",
+										"10",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vehicle remove driver",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/vehicle/remove-driver/13/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"vehicle",
+										"remove-driver",
+										"13",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Company",
+					"item": [
+						{
+							"name": "Company",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/user/company/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"company",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Office",
+					"item": [
+						{
+							"name": "Office",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/user/office/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"office",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "Profile (view)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/user/profile/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"profile",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User profile (update)",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Oleg\",\r\n    \"last_name\": \"Zalisniy\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/profile/26/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"profile",
+										"26",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vehicle",
+					"item": [
+						{
+							"name": "Vehicle",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/user/vehicle/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"vehicle",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vehicle detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/user/vehicle/1/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"vehicle",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "General",
+			"item": [
+				{
+					"name": "Authorisation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"olegstars@gmail.com\",\r\n    \"password\": \"1234Frt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api-auth-token/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-auth-token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_password\": \"1234\",\r\n    \"new_password\": \"hello1234\",\r\n    \"new_password_repeat\": \"hello1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/change-password/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"change-password",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000/api/v1"
+		},
+		{
+			"key": "admin_token",
+			"value": "b1e31c7c55d5f25729d6401aca7f98624effa202"
+		},
+		{
+			"key": "user_token",
+			"value": "0099661f9541941ef6cfa3a61e14e16766ff56c7"
+		},
+		{
+			"key": "admin_token_2",
+			"value": "aeb2f023d3ab812acf0f0655f1e6bf9b9fa5a358"
+		}
+	]
+}

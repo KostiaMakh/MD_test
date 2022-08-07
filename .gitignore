@@ -1,0 +1,13 @@
+*.log
+*.pot
+*.pyc
+.idea
+__pycache__
+venv
+db.sqlite
+md_test/media
+md_test/static
+md_test/db
+md_test/db.sqlite
+
+
